@@ -1,0 +1,13 @@
+	$tarDir = "C:\Users\\$env:Username\Desktop\ANG_psFile_Batches";
+
+
+Get-ChildItem $tarDir -Depth 1 -recurse -Filter *.pdf | % {
+Foreach-Object {
+	$oldname = $_.Name 
+	$newname = $_.Name.Insert(3,'_HR');
+	$oldname;
+	$newname;
+	}
+		Rename-Item $_.FullName -NewName $newname;
+	}
+	
